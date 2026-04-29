@@ -1,0 +1,31 @@
+<?php declare(strict_types=1);
+/*
+ * This file is part of Webisters Dev Commands Library.
+ *
+ * (c) Hafiz Muhammad Moaz <thewebisters@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+namespace Tests\CLI\Commands;
+
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
+
+#[RunTestsInSeparateProcesses]
+final class MigrationVersionTest extends MigrationTestCase
+{
+    public function testNoVersion() : void
+    {
+        $this->dropTables();
+        $this->app->runCli('migrationversion');
+        self::assertStdoutContains('No migration');
+    }
+
+    public function testWithVersion() : void
+    {
+        $this->dropTables();
+        $this->migrateTo('201');
+        $this->app->runCli('migrationversion');
+        self::assertStdoutContains('200_create_table_posts');
+    }
+}

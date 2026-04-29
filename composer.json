@@ -1,0 +1,58 @@
+{
+    "name": "webisters/dev-commands",
+    "description": "Webisters Dev Commands Library",
+    "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "cli",
+        "commands"
+    ],
+    "authors": [
+        {
+            "name": "Hafiz Muhammad Moaz",
+            "email": "hafizmoazkhalid@gmail.com",
+            "homepage": "https://github.com/HafizMMoaz"
+        }
+    ],
+    "homepage": "https://webisters.com/packages/dev-commands",
+    "support": {
+        "email": "support@webisters.com",
+        "issues": "https://github.com/webisters/dev-commands/issues",
+        "forum": "https://github.com/webisters/forum",
+        "source": "https://github.com/webisters/dev-commands",
+        "docs": "https://webisters.com"
+    },
+    "funding": [
+        {
+            "type": "Webisters Sponsor",
+            "url": "https://webisters.com/sponsor"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "webisters/mvc": "*"
+    },
+    "require-dev": {
+        "webisters/coding-standard": "*",
+        "webisters/testing": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Framework\\CLI\\Commands\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\CLI\\Commands\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}
+
+
